@@ -3,7 +3,7 @@
 :root {
     --dark-violet: hsl(256, 26%, 20%);
     --grayish-blue: hsl(216, 30%, 68%);
-    --very-darkd-volet: hsl(270, 9%, 17%);
+    --very-dark-volet: hsl(270, 9%, 17%);
     --dark-grayish-violet: hsl(273, 4%, 51%);
     --very-light-gray: hsl(0, 0%, 98%);
 }
@@ -12,6 +12,9 @@ body {
     overflow-x: hidden;
     font-size: 16px;
     font-weight:400;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 h1,
 h2,
@@ -19,7 +22,30 @@ h3 {
     font-family: "DM Serif Display", serif;
     font-weight: 400;
 }
+li {
+    list-style: none;
+}
 
+#top-row {
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+#top-row button {
+    background: transparent;
+    border: none;
+}
+#humanize {
+    background: var(--dark-violet);
+    color: #fff;
+}
 
 @media ( width > 375px ) {}
+@media ( width >= 850px ) {
+    .mobile-only {
+        display: none;
+    }
+}
 @media ( width >= 1440px ) {}
