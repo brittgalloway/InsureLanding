@@ -292,7 +292,11 @@ footer p {
 .desktop-only {
     display: none;
 }
-@media ( width > 375px ) {}
+@media ( width > 375px ) {
+    #different h2 {
+        flex-basis: 100%;
+    }
+}
 @media ( width >= 850px ) {
     .desktop-only {
         display: block;
@@ -412,7 +416,7 @@ footer p {
     #different hr {
         width: 6.5rem;
         flex-basis: auto;
-        margin: 20rem auto 0 calc(10% + 1rem);
+        margin: 27rem auto 0 calc(10% + 1rem);
     }
     #different h2 {
         margin-left: calc(10% + 1rem);
@@ -502,4 +506,8 @@ footer p {
         grid-row: 3/4;
     }
 }
-@media ( width >= 1440px ) {}
+@media ( width >= 1440px ) {
+    #different hr {
+        margin: 20rem auto 0 calc(10% + 1rem);
+    }
+}
