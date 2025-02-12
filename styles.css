@@ -6,6 +6,7 @@
     --very-dark-violet: hsl(270, 9%, 17%);
     --dark-grayish-violet: hsl(273, 4%, 51%);
     --very-light-gray: hsl(0, 0%, 98%);
+    --transition: 300ms;
 }
 body {
     font-family: "Karla", serif;
@@ -57,6 +58,7 @@ nav {
     text-transform: uppercase;
     font-size: 1.5rem;
     margin: 1rem;
+    transition: color var(--transition);
 }
 .nav-item.button {
     width: 80%;
@@ -111,6 +113,7 @@ a.button {
     text-transform: uppercase;
     width: fit-content;
     justify-self: center;
+    transition: color var(--transition); background var(--transition);
 }
 #humanize {
     grid-column: 1/2;
@@ -191,6 +194,16 @@ hr {
     justify-self: end;
     transform: none;
 }
+a:hover,
+a:focus {
+    color: var(--dark-violet);
+    background: #fff;
+}
+.nav-item.button:hover,
+.nav-item.button:focus {
+    color: #fff;
+    background: var(--dark-violet);
+}
 footer {
     display: grid;
     grid-template-columns: 100%;
@@ -234,6 +247,13 @@ footer p {
     justify-content: center;    
     padding-bottom: 2rem;
 }
+.social-media a svg{
+    fill: var(--dark-grayish-violet);
+    transition: fill var(--transition);
+}
+.social-media a:hover svg{
+    fill: var(--dark-violet);
+}
 .company,
 .help,
 .contact,
@@ -247,6 +267,12 @@ footer p {
 .contact li:not(:first-child),
 .other li:not(:first-child) {
     margin-block: 1rem;
+}
+.company a:hover,
+.help a:hover,
+.contact a:hover,
+.other a:hover {
+    text-decoration: underline;
 }
 
 .attribution {
