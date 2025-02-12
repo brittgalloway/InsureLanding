@@ -2,6 +2,7 @@
 
 :root {
     --dark-violet: hsl(256, 26%, 20%);
+    --dark-violet-transparent: hsla(256, 25%, 20%, 0);
     --grayish-blue: hsl(216, 30%, 68%);
     --very-dark-violet: hsl(270, 9%, 17%);
     --dark-grayish-violet: hsl(273, 4%, 51%);
@@ -214,8 +215,10 @@ footer {
     font-weight: 700;
 }
 footer a {
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: var(--dark-violet-transparent);
     color: var(--very-dark-violet);
+    transition: text-decoration-color var(--transition);
 }
 footer p {
     color: var(--dark-grayish-violet);
@@ -247,11 +250,12 @@ footer p {
     justify-content: center;    
     padding-bottom: 2rem;
 }
-.social-media a svg{
+.social-media a svg {
     fill: var(--dark-grayish-violet);
     transition: fill var(--transition);
 }
-.social-media a:hover svg{
+.social-media a:hover svg,
+.social-media a:focus svg {
     fill: var(--dark-violet);
 }
 .company,
@@ -271,7 +275,11 @@ footer p {
 .company a:hover,
 .help a:hover,
 .contact a:hover,
-.other a:hover {
+.other a:hover,
+.company a:focus,
+.help a:focus,
+.contact a:focus,
+.other a:focus {
     text-decoration: underline;
 }
 
