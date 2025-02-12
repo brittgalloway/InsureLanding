@@ -265,10 +265,11 @@ footer p {
         display: none;
     }
     header {
-        width: 100%;
+        width: calc(100% - 2rem);
         display: flex;
         padding: 1rem;
         justify-content: space-between;
+        align-items: center;
     }
     #top-row {
         display: inline-block;
@@ -299,6 +300,7 @@ footer p {
     .nav-item.button {
         color: var(--very-dark-violet);
         border-color: var(--very-dark-violet);
+        width: auto;
     }
     body {
         text-align: left;
@@ -334,6 +336,7 @@ footer p {
         grid-row: 3/4;
         margin-left: 25%;
         justify-self: auto;
+        height: fit-content;
     }
     #family {
         grid-row: 1/3;
@@ -366,10 +369,10 @@ footer p {
         padding: 2rem;
         gap: 0;
         width: 100%;
+        width: calc(100% - 2rem);
     }
     .social-media {
         width: auto;
-        padding: 0;
     }
     .company {
         grid-column: 1/2;
