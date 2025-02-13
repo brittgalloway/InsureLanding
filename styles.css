@@ -18,6 +18,9 @@ body {
     padding: 0;
     margin: 0;
 }
+body:has(nav[popover]:popover-open) {
+    overflow: hidden;
+}
 h1,
 h2,
 h3 {
@@ -44,7 +47,7 @@ nav {
     background: var(--dark-violet);
     padding: 0;
     width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100% - 64px);
     overflow: hidden;
     inset: initial;
     bottom: 0;
@@ -83,9 +86,17 @@ p {
     padding: 1rem;
 }
 #top-row button {
-    background: transparent;
     border: none;
-    /* add a switch to the X to close */
+    background-image: url(./images/icon-hamburger.svg);
+    width: 32px;
+    height: 32px;
+    transition: background-image var(--transition);
+}
+header:has(nav[popover]:popover-open) #top-row button {
+    border: none;
+    background-image: url(./images/icon-close.svg);
+    width: 32px;
+    height: 32px;
 }
 main {
     display: grid;
@@ -135,13 +146,13 @@ a.button {
     grid-row: 2/3;
     grid-column: 1/2;
     justify-self: start;
-    transform: translateY(-11rem);
 }
 .intro-right {
     grid-row: 2/4;
     grid-column: 1/2;
     justify-self: end;
-    transform: translateY(6rem);
+    align-self: center;
+    transform: translateY(-100%);
 }
 #different {
     grid-row: 3/4;
@@ -242,6 +253,8 @@ footer p {
 .footer-pattern {
     grid-row: 1/2;
     grid-column: 1/2;
+    justify-self: start;
+    align-self: start;
 }
 .social-media {
     display: flex;
@@ -407,8 +420,14 @@ footer p {
     .intro-right {
         grid-column: 2/3;
         grid-row: 1/2;
-        transform: translateY(-5rem);
+        transform: translate(10rem, -5rem);
         z-index: 2;
+    }
+    .intro-left {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        justify-self: start;
+        transform: translate(-2rem, -8rem);
     }
     #different {
         grid-column: 1/3;
@@ -431,30 +450,28 @@ footer p {
     #find-more {
         grid-column: 1/3;
         margin: auto calc(10% + 1rem);
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr;
         padding: 0;
     }
     #find-more .work {
         grid-row: 1/2;
-        grid-column: 2/3;
-        justify-self: center;
+        grid-column: 1/3;
+        justify-self: end;
         transform: none;
     }
     #find-more h2 {
         grid-column: 1/2;
         grid-row: 1/2;
         align-self: center;
-        justify-self: start;
+        justify-self: center;
         width: 26.5rem;
-        margin-left: 5rem;
     }
     #find-more a {
         grid-column: 2/3;
         grid-row: 1/2;
         align-self: center;
-        justify-self: end;
-        margin-right: 5rem;
+        justify-self: center;
     }
     footer {
         grid-template-columns: 30% 20% 20% 30%;
@@ -464,7 +481,7 @@ footer p {
         gap: 0;
     }
     .footer-pattern {
-        grid-column: 1/3;
+        grid-column: 1/2;
         grid-row: 1/3;
     }
     #media {
@@ -523,9 +540,23 @@ footer p {
         align-self: center;
     }
     #family {
-        margin-right: 8rem;
+        margin-right: 6rem;
+    }
+    .intro-right {
+        transform: translate(0, -5rem);
+    }
+    .intro-left {
+        transform: translate(0, -11rem);
     }
     #different hr {
         margin: 20rem auto 0 calc(10% + 1rem);
+    }
+    #find-more h2 {
+        justify-self: start;
+        margin-left: 5rem;
+    }
+    #find-more a {
+        justify-self: end;
+        margin-right: 5rem;
     }
 }
